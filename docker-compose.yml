@@ -1,0 +1,9 @@
+services:
+  clickhouse:
+    image: clickhouse/clickhouse-server:23.10.4.25-alpine
+    container_name: clickhouse_container
+    ports:
+      - "8123:8123"
+      - "9000:9000"
+    volumes:
+      - ./users.xml:/etc/clickhouse-server/users.d/users.xml
